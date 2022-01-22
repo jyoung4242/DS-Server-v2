@@ -1,0 +1,77 @@
+
+//this is for endpoint api stuff, like starting a game
+GET http://localhost:3000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSmltIiwiaWF0IjoxNjQxNDAxMjkxLCJleHAiOjE2NDE0MDEzNTF9.lFB68N3JJlBrckfvtJOHciaJzuieO_Ft8FUoWEFw5g0
+
+###
+
+DELETE http://localhost:5000/user/logout
+Content-Type: application/json
+
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYW5kbGUiOiJNb29raWUiLCJpYXQiOjE2NDE0NDQxMTl9.XG2ZsHsNUYj8Czv3MqpgKKN3TcHlwkRuIoMdTnrYkgw"
+}
+
+###
+///this is for refreshing your access token
+POST http://localhost:5000/user/refresh
+Content-Type: application/json
+
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoYW5kbGUiOiJNb29raWUiLCJpYXQiOjE2NDE0OTA5NDJ9.ofoOveIN5wSZdP2QR1vbhCXZ9-rEOyHGKQMu8TVMt7A"
+}
+
+###
+//main new user for testing
+POST http://localhost:5000/user/newuser
+Content-Type: application/json
+
+{
+  "name": "Justin",
+  "email": "jy@gmail.com",
+  "password": "password",
+  "handle": "Mookie"
+}
+
+###
+//logs in
+POST http://localhost:5000/user/login
+Content-Type: application/json
+
+{
+  "handle": "Mookie",
+  "password": "password"
+}
+
+###
+//sets up another new user
+POST http://localhost:5000/user/newuser
+Content-Type: application/json
+
+{
+  "name": "Mommy",
+  "email": "jly@gmail.com",
+  "password": "gibbs123",
+  "handle": "Gibbs"
+}
+
+//GameAPI
+###
+
+POST http://localhost:5000/game/newgame
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSmltIiwiaWF0IjoxNjQxNDAxMjkxLCJleHAiOjE2NDE0MDEzNTF9.lFB68N3JJlBrckfvtJOHciaJzuieO_Ft8FUoWEFw5g0
+{
+  "mode": "Private"
+}
+
+###
+
+POST http://localhost:5000/game/join
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSmltIiwiaWF0IjoxNjQxNDAxMjkxLCJleHAiOjE2NDE0MDEzNTF9.lFB68N3JJlBrckfvtJOHciaJzuieO_Ft8FUoWEFw5g0
+
+{
+  "userHandle": "Mookie",
+  "gameID": "9v5n4t8kyhjedpz"
+}
