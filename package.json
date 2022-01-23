@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack serve",
     "build": "cross-env NODE_ENV=production webpack",
-    "dev": "nodemon --watch \"./**/*.ts\" --exec \"ts-node\" ./src/server.ts"
+    "dev": "nodemon --watch \"./**/*.ts\" --exec \"ts-node\" ./src/server.ts",
+    "prod": "main.js"
   },
   "keywords": [],
   "author": "",
